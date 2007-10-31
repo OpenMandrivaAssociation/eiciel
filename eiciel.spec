@@ -23,7 +23,7 @@ extension within Nautilus, or as a standalone utility.
 
 %prep
 %setup -q
-rm -f src/*.desktop
+sed -i s/Version=.*/Version=1.0/ src/*.desktop.in
 
 %build
 aclocal
@@ -51,6 +51,7 @@ rm -rf %{buildroot}
 %{_bindir}/%{name}
 %{_datadir}/%{name}/
 %{_datadir}/applications/*%{name}*
+%{_datadir}/gnome/help/%{name}
 %{_mandir}/man1/%{name}*
 %{_libdir}/nautilus/extensions-1.0/lib%{name}*
 %exclude %{_libdir}/nautilus/extensions-1.0/*.a
