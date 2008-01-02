@@ -10,6 +10,7 @@ Group:		Graphical desktop/GNOME
 License:	GPL
 URL:		http://rofi.pinchito.com/eiciel
 Source0:	http://rofi.pinchito.com/eiciel/download/%{name}-%{version}.tar.bz2
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires:	libgnomeui2-devel gtkmm2.4-devel gnome-vfs2-devel nautilus-devel
 BuildRequires:	libattr-devel libacl-devel gettext-devel
 BuildRequires:	autoconf2.5
