@@ -1,6 +1,6 @@
 %define	name	eiciel
 %define	version	0.9.5.1
-%define	release	%mkrel 2
+%define	release	%mkrel 3
 
 Name:		%name
 Version:	%version
@@ -29,7 +29,7 @@ sed -i s/Version=.*/Version=1.0/ src/*.desktop.in
 aclocal
 autoconf
 automake
-%configure2_5x --with-nautilus-extensions-dir=%{_libdir}/nautilus/extensions-1.0
+%configure2_5x --with-nautilus-extensions-dir=%{_libdir}/nautilus/extensions-2.0
 %make
 
 %install
@@ -53,8 +53,8 @@ rm -rf %{buildroot}
 %{_datadir}/applications/*%{name}*
 %{_datadir}/gnome/help/%{name}
 %{_mandir}/man1/%{name}*
-%{_libdir}/nautilus/extensions-1.0/lib%{name}*
-%exclude %{_libdir}/nautilus/extensions-1.0/*.a
-%exclude %{_libdir}/nautilus/extensions-1.0/*.la
+%{_libdir}/nautilus/extensions-2.0/lib%{name}*
+%exclude %{_libdir}/nautilus/extensions-2.0/*.a
+%exclude %{_libdir}/nautilus/extensions-2.0/*.la
 
 
