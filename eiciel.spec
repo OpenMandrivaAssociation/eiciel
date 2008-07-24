@@ -1,6 +1,6 @@
 %define	name	eiciel
 %define	version	0.9.5.1
-%define	release	%mkrel 3
+%define	release	%mkrel 5
 
 Name:		%name
 Version:	%version
