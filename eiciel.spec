@@ -1,6 +1,6 @@
 %define	name	eiciel
-%define	version	0.9.5.1
-%define	release	%mkrel 6
+%define	version	0.9.6.1
+%define	release	%mkrel 1
 
 Name:		%name
 Version:	%version
@@ -8,8 +8,8 @@ Release:	%release
 Summary:	Graphical access control list (ACL) editor
 Group:		Graphical desktop/GNOME
 License:	GPL
-URL:		http://rofi.pinchito.com/eiciel
-Source0:	http://rofi.pinchito.com/eiciel/download/%{name}-%{version}.tar.bz2
+URL:		http://rofi.roger-ferrer.org/eiciel/
+Source0:	http://rofi.roger-ferrer.org/eiciel/download/%{name}-%{version}.tar.bz2
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires:	libgnomeui2-devel gtkmm2.4-devel gnome-vfs2-devel nautilus-devel
 BuildRequires:	libattr-devel libacl-devel gettext-devel
@@ -26,9 +26,7 @@ extension within Nautilus, or as a standalone utility.
 sed -i s/Version=.*/Version=1.0/ src/*.desktop.in
 
 %build
-aclocal
-autoconf
-automake
+#autoreconf -fi
 %configure2_5x --with-nautilus-extensions-dir=%{_libdir}/nautilus/extensions-2.0
 %make
 
@@ -36,11 +34,6 @@ automake
 rm -rf %{buildroot}
 %makeinstall_std
 %find_lang %{name}
-desktop-file-install --vendor="" \
-  --remove-category="Application" \
-  --remove-category="Accessories" \
-  --add-category="X-MandrivaLinux-System-FileTools" \
-  --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
 
 %clean
 rm -rf %{buildroot}
