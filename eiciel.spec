@@ -4,7 +4,7 @@ Release:	1
 Summary:	Graphical access control list (ACL) editor
 Group:		Graphical desktop/GNOME
 License:	GPL
-URL:		http://rofi.roger-ferrer.org/eiciel/
+URL:		https://rofi.roger-ferrer.org/eiciel/
 Source0:	http://rofi.roger-ferrer.org/eiciel/download/%{name}-%{version}.tar.bz2
 BuildRequires:	pkgconfig(libgnomeui-2.0)
 BuildRequires:	gnome-vfs2-devel
